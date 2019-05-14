@@ -15,11 +15,13 @@
 
     <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-    <TextField fx:id="usernameField" styleClass="wrong" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <TextField onKeyPressed="#handleUsernameFieldAction" fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
     <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="2" />
 
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <PasswordField onKeyPressed="#handlePasswordFieldAction" fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label fx:id="message" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnSpan="2" GridPane.columnIndex="0" GridPane.rowIndex="4">
         <VBox/>
@@ -31,7 +33,7 @@
 
     <HBox alignment="bottom_right" spacing="10" GridPane.columnSpan="2" GridPane.columnIndex="0" GridPane.rowIndex="5">
         <VBox>
-            <Button prefWidth="410" onAction="#handleScoreboardButtonAction" text="Register" GridPane.rowIndex="4" />
+            <Button prefWidth="410" onAction="#handleScoreboardButtonAction" text="Scoreboard" GridPane.rowIndex="4" />
         </VBox>
     </HBox>
 

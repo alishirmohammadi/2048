@@ -32,17 +32,21 @@ Button {
 TextField, PasswordField {
     -fx-border-radius: 3px;
     -fx-border-color: black;
-}
-
-TextField:editable, PasswordField:editable {
-    -fx-border-radius: 3px;
-    -fx-border-color: black;
+    -fx-border-width: 2px;
 }
 
 TextField.wrong, PasswordField.wrong {
     -fx-border-radius: 3px;
     -fx-border-color: red;
     -fx-border-width: 2px;
+}
+
+Label.warning {
+    -fx-text-fill: red;
+}
+
+Label.success {
+    -fx-text-fill: green;
 }
 
 .text-big {
