@@ -29,6 +29,14 @@ Button {
     -fx-min-width: 50%;
 }
 
+Button:hover {
+    -fx-background-color: #998B80;
+}
+
+Button:pressed{
+    -fx-background-color: #776960;
+}
+
 TextField, PasswordField {
     -fx-border-radius: 3px;
     -fx-border-color: black;

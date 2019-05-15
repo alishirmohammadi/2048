@@ -7,6 +7,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import models.User;
+import views.Main;
+
+import java.io.IOException;
 
 public class LoginController {
     @FXML Label message;
@@ -30,9 +33,7 @@ public class LoginController {
     public void handleLoginButtonAction(ActionEvent actionEvent) {
         try {
             User user = User.authenticateUser(usernameField.getText(), passwordField.getText());
-            message.getStyleClass().remove("warning");
-            message.getStyleClass().add("success");
-            message.setText("Account created.");
+            Main.showMenu();
         } catch (User.UserNotFoundException e) {
             message.setText("Account with this username not found.");
             message.getStyleClass().remove("success");
@@ -43,6 +44,8 @@ public class LoginController {
             message.getStyleClass().remove("success");
             message.getStyleClass().add("warning");
             passwordField.getStyleClass().add("wrong");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
