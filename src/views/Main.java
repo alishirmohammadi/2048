@@ -5,13 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import models.User;
+import models.Game;
 import java.io.IOException;
 
 
 public class Main extends Application {
 
     private static Stage stage;
+    private static User loggedInUser;
+    private static Game game;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -25,9 +28,21 @@ public class Main extends Application {
         stage = primaryStage;
     }
 
+    public static void setLoggedInUser(User user) {
+        loggedInUser = user;
+    }
+
     public static void showMenu() throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("layouts/GameMenu.fxml"));
         Scene scene = new Scene(root, 240, 380);
+        scene.getStylesheets().add("views/stylesheets/style.css");
+        stage.setScene(scene);
+    }
+
+    public static void startGame(int n) throws IOException {
+        game = new Game(n);
+        Parent root = FXMLLoader.load(Main.class.getResource("layouts/Game.fxml"));
+        Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add("views/stylesheets/style.css");
         stage.setScene(scene);
     }

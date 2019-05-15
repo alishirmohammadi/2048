@@ -1,4 +1,4 @@
-package controller;
+package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,11 +22,14 @@ public class LoginController {
             message.getStyleClass().remove("warning");
             message.getStyleClass().add("success");
             message.setText("Account created.");
+            usernameField.setText("");
+            passwordField.setText("");
         } catch (User.UserExistsException exception) {
             message.setText("Account with this username exists.");
             message.getStyleClass().remove("success");
             message.getStyleClass().add("warning");
             usernameField.getStyleClass().add("wrong");
+            passwordField.getStyleClass().remove("wrong");
         }
     }
 
@@ -34,6 +37,7 @@ public class LoginController {
         try {
             User user = User.authenticateUser(usernameField.getText(), passwordField.getText());
             Main.showMenu();
+            Main.setLoggedInUser(user);
         } catch (User.UserNotFoundException e) {
             message.setText("Account with this username not found.");
             message.getStyleClass().remove("success");
@@ -43,6 +47,7 @@ public class LoginController {
             message.setText("Wrong password!");
             message.getStyleClass().remove("success");
             message.getStyleClass().add("warning");
+            usernameField.getStyleClass().remove("wrong");
             passwordField.getStyleClass().add("wrong");
         } catch (IOException e) {
             e.printStackTrace();
