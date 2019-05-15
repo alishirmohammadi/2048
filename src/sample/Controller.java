@@ -9,7 +9,7 @@ import javafx.scene.input.KeyEvent;
 import models.User;
 
 public class Controller {
-    public Label message;
+    @FXML Label message;
     @FXML TextField usernameField;
     @FXML PasswordField passwordField;
 
