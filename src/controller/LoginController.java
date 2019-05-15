@@ -1,4 +1,4 @@
-package sample;
+package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import models.User;
 
-public class Controller {
+public class LoginController {
     @FXML Label message;
     @FXML TextField usernameField;
     @FXML PasswordField passwordField;
