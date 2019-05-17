@@ -15,26 +15,30 @@ public class GameController {
     public static void showLabels() {
         game = Main.game;
         labels = Main.labels;
-        for(int i = 0; i < game.getN(); i++)
-            for(int j = 0; j < game.getN(); j++) {
+        for (int i = 0; i < game.getN(); i++)
+            for (int j = 0; j < game.getN(); j++) {
                 labels[i][j].getStyleClass().clear();
                 labels[i][j].getStyleClass().addAll("cell", "cell-" + game.getCell(i, j));
-                if(game.getCell(i, j) != 0)
+                if (game.getCell(i, j) != 0)
                     labels[i][j].setText("" + game.getCell(i, j));
+                else
+                    labels[i][j].setText("");
             }
     }
 
     public static EventHandler<KeyEvent> keyEventEventHandler = new EventHandler<KeyEvent>() {
         @Override
         public void handle(KeyEvent event) {
-            if(event.getCode() == KeyCode.RIGHT)
+            if (event.getCode() == KeyCode.RIGHT && game.canMove(Direction.RIGHT))
                 game.move(Direction.RIGHT);
-            if(event.getCode() == KeyCode.LEFT)
+            else if (event.getCode() == KeyCode.LEFT && game.canMove(Direction.LEFT))
                 game.move(Direction.LEFT);
-            if(event.getCode() == KeyCode.UP)
-                game.move(Direction.UP);
-            if(event.getCode() == KeyCode.DOWN)
+            else if (event.getCode() == KeyCode.DOWN && game.canMove(Direction.DOWN))
                 game.move(Direction.DOWN);
+            else if (event.getCode() == KeyCode.UP && game.canMove(Direction.UP))
+                game.move(Direction.UP);
+            else
+                return;
             game.insert();
             showLabels();
         }

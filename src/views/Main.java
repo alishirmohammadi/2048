@@ -65,7 +65,7 @@ public class Main extends Application {
         label.setPrefWidth(n * (CELL_MARGIN + CELL_SIZE)+ CELL_MARGIN);
         label.setPrefHeight(n * (CELL_MARGIN + CELL_SIZE) + CELL_MARGIN);
         label.relocate(GAME_MARGIN, GAME_MARGIN);
-        label.setStyle("-fx-background-color: #CDC1B4; -fx-background-radius: 10px");
+        label.setStyle("-fx-background-color: #BBADA0; -fx-background-radius: 10px");
         root.getChildren().add(label);
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
