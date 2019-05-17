@@ -60,3 +60,77 @@ Label.success {
 .text-big {
     -fx-font-size: 35px;
 }
+
+.cell {
+    -fx-background-radius: 10px;
+    -fx-text-fill: #F9F6F2;
+    -fx-pref-height: 90px;
+    -fx-pref-width: 90px;
+    -fx-alignment: center;
+}
+
+.cell-0 {
+    -fx-background-color: #CDC1B4;
+}
+
+.cell-2 {
+    -fx-background-color: #EEE4DA;
+    -fx-font-size: 44;
+    -fx-text-fill: #776E65;
+}
+
+.cell-4 {
+    -fx-background-color: #EDE0C8;
+    -fx-font-size: 44;
+    -fx-text-fill: #776E65;
+}
+
+.cell-8 {
+    -fx-background-color: #F2B379;
+    -fx-font-size: 44;
+}
+
+.cell-16{
+    -fx-background-color: #F59563;
+    -fx-font-size: 40;
+}
+
+.cell-32{
+    -fx-background-color: #F67C5F;
+    -fx-font-size: 40;
+}
+
+.cell-64{
+    -fx-background-color: #F65E3B;
+    -fx-font-size: 40;
+}
+
+.cell-128{
+    -fx-background-color: #EDCF72;
+    -fx-font-size: 36;
+}
+
+.cell-256 {
+    -fx-background-color: #EDCC61;
+    -fx-font-size: 36;
+}
+
+.cell-512 {
+    -fx-background-color: #EDC850;
+    -fx-font-size: 36;
+}
+
+.cell-1024 {
+    -fx-background-color: #EDC53F;
+    -fx-font-size: 32;
+}
+
+.cell-2048 {
+    -fx-background-color: #EDC22E;
+    -fx-font-size: 32;
+}
+
+.cell-4096 {
+    -fx-background-color: #EDC22E;
+    -fx-font-size: 32;
+}

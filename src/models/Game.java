@@ -12,6 +12,14 @@ public class Game {
         this.n = n;
     }
 
+    public int getN() {
+        return n;
+    }
+
+    public int getCell(int x, int y) {
+        return map[x][y];
+    }
+
     public void insert() {
         int x, y;
         do {
@@ -52,7 +60,7 @@ public class Game {
                 } catch (ArrayIndexOutOfBoundsException ignored) {}
             }
         }
-        for(int i = 0; i < n; i++)
+        for(int i = 0; i < n - 1; i++)
             applyGravity(direction);
     }
 
