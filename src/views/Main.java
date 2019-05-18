@@ -1,6 +1,7 @@
 package views;
 
 import controllers.GameController;
+import controllers.ScoreBoardController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -17,14 +18,6 @@ import java.io.IOException;
 public class Main extends Application {
     private static Stage stage;
     private static User loggedInUser;
-
-    static {
-        try {
-            loggedInUser = new User("ali", "1");
-        } catch (User.UserExistsException e) {
-            e.printStackTrace();
-        }
-    }
 
     private static final int CELL_SIZE = 90;
     private static final int CELL_MARGIN = 10;
@@ -67,6 +60,14 @@ public class Main extends Application {
         loggedInUser = user;
     }
 
+    public static void showScoreBoard() throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("layouts/ScoreBoard.fxml"));
+        Scene scene = new Scene(root, 480, 400);
+        scene.getStylesheets().add("views/stylesheets/style.css");
+        ScoreBoardController.instance.showLabels(User.getUsers());
+        stage.setScene(scene);
+    }
+
     public static void showMenu() throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("layouts/GameMenu.fxml"));
         Scene scene = new Scene(root, 240, 380);
@@ -93,6 +94,20 @@ public class Main extends Application {
                 root.getChildren().add(labels[i][j]);
             }
         }
+    }
+
+    private static void addReturnButton(Group root) {
+        Button button = new Button("Return\nto menu");
+        button.setStyle("-fx-background-color: #8F7A66; -fx-padding: 10px; -fx-text-fill: #FAF8EF; -fx-text-alignment: center; -fx-font-size: 20;");
+        button.relocate(GAME_MARGIN * 3 + 240, GAME_MARGIN * 2);
+        button.setOnAction(event -> {
+            try {
+                showMenu();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        root.getChildren().add(button);
     }
 
     private static void addScoreLabel(Group root) {
@@ -127,6 +142,7 @@ public class Main extends Application {
         addBackground(root, n);
         addLabels(root, n);
         addScoreLabel(root);
+        addReturnButton(root);
         Scene scene = new Scene(root, getGameWidth(n), getGameHeight(n));
         scene.getStylesheets().add("views/stylesheets/style.css");
         stage.setScene(scene);

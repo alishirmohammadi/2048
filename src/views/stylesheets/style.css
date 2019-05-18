@@ -150,3 +150,7 @@ Label.success {
     -fx-text-fill: #EEE4DA;
     -fx-text-alignment: center;
 }
+
+.game-button {
+    -fx-background-color: #BBADA0; -fx-text-fill: #FAF8EF; -fx-text-alignment: center; -fx-font-size: 30;
+}

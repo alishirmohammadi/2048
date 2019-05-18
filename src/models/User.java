@@ -1,5 +1,7 @@
 package models;
 
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -18,6 +20,10 @@ public class User {
         this.password = password;
     }
 
+    public static ArrayList<User> getUsers() {
+        return new ArrayList<>(users.values());
+    }
+
     public static User authenticateUser(String username, String password) throws UserNotFoundException, WrongPasswordException {
         User user = users.get(username);
         if (user == null)
@@ -32,10 +38,11 @@ public class User {
     }
 
     public void setBestScore(int n, int score) {
-        if (!bestScores.containsKey(n))
+        if (!bestScores.containsKey(n)) {
             bestScores.put(n, score);
-        else
+        } else {
             bestScores.replace(n, score);
+        }
     }
 
     @Override

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.control.Button?>
+<StackPane prefHeight="400.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ScoreBoardController">
+    <children>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="3×3">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="label3_1" layoutX="14.0" layoutY="14.0"/>
+                                <Label fx:id="label3_1_score" layoutX="229.0" layoutY="13.0"/>
+                                <Label fx:id="label3_2" layoutX="14.0" layoutY="44.0"/>
+                                <Label fx:id="label3_2_score" layoutX="229.0" layoutY="43.0"/>
+                                <Label fx:id="label3_3" layoutX="14.0" layoutY="77.0"/>
+                                <Label fx:id="label3_3_score" layoutX="229.0" layoutY="76.0"/>
+                                <Button text="Return" onAction="#handleReturnButtonAction" prefWidth="120" prefHeight="40" layoutX="340" layoutY="270"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="4×4">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="label4_1" layoutX="14.0" layoutY="14.0"/>
+                                <Label fx:id="label4_1_score" layoutX="229.0" layoutY="13.0"/>
+                                <Label fx:id="label4_2" layoutX="14.0" layoutY="44.0"/>
+                                <Label fx:id="label4_2_score" layoutX="229.0" layoutY="43.0"/>
+                                <Label fx:id="label4_3" layoutX="14.0" layoutY="77.0"/>
+                                <Label fx:id="label4_3_score" layoutX="229.0" layoutY="76.0"/>
+                                <Button text="Return" onAction="#handleReturnButtonAction" prefWidth="120" prefHeight="40" layoutX="340" layoutY="270"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="5×5">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="label5_1" layoutX="14.0" layoutY="14.0"/>
+                                <Label fx:id="label5_1_score" layoutX="229.0" layoutY="13.0"/>
+                                <Label fx:id="label5_2" layoutX="14.0" layoutY="44.0"/>
+                                <Label fx:id="label5_2_score" layoutX="229.0" layoutY="43.0"/>
+                                <Label fx:id="label5_3" layoutX="14.0" layoutY="77.0"/>
+                                <Label fx:id="label5_3_score" layoutX="229.0" layoutY="76.0"/>
+                                <Button text="Return" onAction="#handleReturnButtonAction" prefWidth="120" prefHeight="40" layoutX="340" layoutY="270"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="6×6">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="label6_1" layoutX="14.0" layoutY="14.0"/>
+                                <Label fx:id="label6_1_score" layoutX="229.0" layoutY="13.0"/>
+                                <Label fx:id="label6_2" layoutX="14.0" layoutY="44.0"/>
+                                <Label fx:id="label6_2_score" layoutX="229.0" layoutY="43.0"/>
+                                <Label fx:id="label6_3" layoutX="14.0" layoutY="77.0"/>
+                                <Label fx:id="label6_3_score" layoutX="229.0" layoutY="76.0"/>
+                                <Button text="Return" onAction="#handleReturnButtonAction" prefWidth="120" prefHeight="40" layoutX="340" layoutY="270"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="7×7">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="label7_1" layoutX="14.0" layoutY="14.0"/>
+                                <Label fx:id="label7_1_score" layoutX="229.0" layoutY="13.0"/>
+                                <Label fx:id="label7_2" layoutX="14.0" layoutY="44.0"/>
+                                <Label fx:id="label7_2_score" layoutX="229.0" layoutY="43.0"/>
+                                <Label fx:id="label7_3" layoutX="14.0" layoutY="77.0"/>
+                                <Label fx:id="label7_3_score" layoutX="229.0" layoutY="76.0"/>
+                                <Button text="Return" onAction="#handleReturnButtonAction" prefWidth="120" prefHeight="40" layoutX="340" layoutY="270"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="8×8">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="label8_1" layoutX="14.0" layoutY="14.0"/>
+                                <Label fx:id="label8_1_score" layoutX="229.0" layoutY="13.0"/>
+                                <Label fx:id="label8_2" layoutX="14.0" layoutY="44.0"/>
+                                <Label fx:id="label8_2_score" layoutX="229.0" layoutY="43.0"/>
+                                <Label fx:id="label8_3" layoutX="14.0" layoutY="77.0"/>
+                                <Label fx:id="label8_3_score" layoutX="229.0" layoutY="76.0"/>
+                                <Button text="Return" onAction="#handleReturnButtonAction" prefWidth="120" prefHeight="40" layoutX="340" layoutY="270"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</StackPane>

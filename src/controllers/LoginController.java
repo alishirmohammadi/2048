@@ -55,7 +55,11 @@ public class LoginController {
     }
 
     public void handleScoreboardButtonAction(ActionEvent actionEvent) {
-
+        try {
+            Main.showScoreBoard();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleUsernameFieldAction(KeyEvent keyEvent) {
