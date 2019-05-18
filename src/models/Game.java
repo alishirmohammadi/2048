@@ -3,6 +3,7 @@ package models;
 import java.util.Random;
 
 public class Game {
+    private int score;
     private int[][] map;
     private int n;
     private static Random random = new Random();
@@ -51,6 +52,7 @@ public class Game {
     public void move(Direction direction) {
         for (int i = 0; i < n; i++)
             applyGravity(direction);
+        int scoreChange = 0;
         int deltaX = Direction.getDeltaX(direction);
         int deltaY = Direction.getDeltaY(direction);
         for (int i = 0; i < n; i++) {
@@ -58,6 +60,7 @@ public class Game {
                 try {
                     if (map[i][j] == map[i + deltaX][j + deltaY]) {
                         map[i][j] = map[i][j] * 2;
+                        scoreChange += map[i][j];
                         map[i + deltaX][j + deltaY] = 0;
                     }
                 } catch (ArrayIndexOutOfBoundsException ignored) {
@@ -66,6 +69,11 @@ public class Game {
         }
         for (int i = 0; i < n - 1; i++)
             applyGravity(direction);
+        score += scoreChange;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public boolean isFull() {

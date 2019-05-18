@@ -62,7 +62,7 @@ Label.success {
 }
 
 .cell {
-    -fx-background-radius: 10px;
+    -fx-background-radius: 5px;
     -fx-text-fill: #F9F6F2;
     -fx-pref-height: 90px;
     -fx-pref-width: 90px;

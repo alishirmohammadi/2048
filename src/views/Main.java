@@ -12,9 +12,7 @@ import models.User;
 import models.Game;
 import java.io.IOException;
 
-
 public class Main extends Application {
-
     private static Stage stage;
     private static User loggedInUser;
 
@@ -35,6 +33,7 @@ public class Main extends Application {
         primaryStage.show();
         stage = primaryStage;
     }
+
 
     private static int getGameWidth(int n) {
         return n * (CELL_MARGIN + CELL_SIZE) + CELL_MARGIN + GAME_MARGIN * 2;
@@ -61,6 +60,7 @@ public class Main extends Application {
         game.insert();
         Group root = new Group();
         labels = new Label[n][n];
+        root.setStyle("-fx-background-color: #FAF8EF");
         Label label = new Label("");
         label.setPrefWidth(n * (CELL_MARGIN + CELL_SIZE)+ CELL_MARGIN);
         label.setPrefHeight(n * (CELL_MARGIN + CELL_SIZE) + CELL_MARGIN);
