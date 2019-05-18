@@ -15,5 +15,4 @@
     <Button onAction="#handle8x8ButtonAction" prefWidth="80" text="8×8" GridPane.rowIndex="3" GridPane.columnIndex="1" />
 
 
-
 </GridPane>

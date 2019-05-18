@@ -1,14 +1,11 @@
 package models;
 
-import javafx.collections.ObservableList;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
 public class User {
     private static HashMap<String, User> users = new HashMap<>();
-
+    private HashMap<Integer, Integer> bestScores = new HashMap<>();
     private String username, password;
     private int highScore;
 
@@ -28,6 +25,17 @@ public class User {
         if(user.password.equals(password))
             return user;
         throw new WrongPasswordException();
+    }
+
+    public int getBestScore(int n) {
+        return bestScores.getOrDefault(n, 0);
+    }
+
+    public void setBestScore(int n, int score) {
+        if(!bestScores.containsKey(n))
+            bestScores.put(n, score);
+        else
+            bestScores.replace(n, score);
     }
 
     @Override

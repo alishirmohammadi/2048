@@ -42,9 +42,7 @@ public class Game {
                         map[i + deltaX][j + deltaY] = map[i][j];
                         map[i][j] = 0;
                     }
-                } catch (ArrayIndexOutOfBoundsException ignored) {
-                }
-
+                } catch (ArrayIndexOutOfBoundsException ignored) {}
             }
         }
     }
@@ -55,8 +53,10 @@ public class Game {
         int scoreChange = 0;
         int deltaX = Direction.getDeltaX(direction);
         int deltaY = Direction.getDeltaY(direction);
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        int step = -(deltaX + deltaY);
+        int start = deltaX + deltaY > 0 ? n - 1 : 0;
+        for (int i = start; (step > 0 ? i < n : i >= 0); i += step) {
+            for (int j = start; (step > 0 ? j < n : j >= 0); j += step) {
                 try {
                     if (map[i][j] == map[i + deltaX][j + deltaY]) {
                         map[i][j] = map[i][j] * 2;

@@ -39,6 +39,11 @@ public class GameController {
                 game.move(Direction.UP);
             else
                 return;
+            if(game.getScore() > Main.getLoggedInUser().getBestScore(game.getN())) {
+                Main.getLoggedInUser().setBestScore(game.getN(), game.getScore());
+            }
+            Main.scoreButton.setText(String.format("%d", game.getScore()));
+            Main.bestScoreBoard.setText(String.format("%d", Main.getLoggedInUser().getBestScore(game.getN())));
             game.insert();
             showLabels();
         }
