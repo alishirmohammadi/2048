@@ -6,13 +6,13 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.MenuController"
             alignment="center" vgap="20" hgap="20">
-    <Button onAction="#handle2x2ButtonAction" prefWidth="80" text="2×2" GridPane.rowIndex="0" GridPane.columnIndex="1" />
     <Button onAction="#handle3x3ButtonAction" prefWidth="80" text="3×3" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-    <Button onAction="#handle4x4ButtonAction" prefWidth="180" text="4×4" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2" />
-    <Button onAction="#handle5x5ButtonAction" prefWidth="80" text="5×5" GridPane.rowIndex="2" GridPane.columnIndex="0" />
-    <Button onAction="#handle6x6ButtonAction" prefWidth="80" text="6×6" GridPane.rowIndex="2" GridPane.columnIndex="1" />
-    <Button onAction="#handle7x7ButtonAction" prefWidth="80" text="7×7" GridPane.rowIndex="3" GridPane.columnIndex="0" />
-    <Button onAction="#handle8x8ButtonAction" prefWidth="80" text="8×8" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+    <Button onAction="#handle4x4ButtonAction" prefWidth="80" text="4×4" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+    <Button onAction="#handle5x5ButtonAction" prefWidth="80" text="5×5" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+    <Button onAction="#handle6x6ButtonAction" prefWidth="80" text="6×6" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+    <Button onAction="#handle7x7ButtonAction" prefWidth="80" text="7×7" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+    <Button onAction="#handle8x8ButtonAction" prefWidth="80" text="8×8" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+    <Button onAction="#handleLogoutButtonAction" prefWidth="180" text="Logout" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2" />
 
 
 </GridPane>

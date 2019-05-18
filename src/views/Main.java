@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import models.User;
 import models.Game;
+
 import java.io.IOException;
 
 public class Main extends Application {
@@ -36,16 +37,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("layouts/Login.fxml"));
+        stage = primaryStage;
         primaryStage.setResizable(false);
+        showLoginMenu();
+    }
+
+    public static void showLoginMenu() throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("layouts/Login.fxml"));
         Scene scene = new Scene(root, 480, 400);
         scene.getStylesheets().add("views/stylesheets/style.css");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        stage = primaryStage;
-
-        // For Test
-        startGame(4);
+        stage.setScene(scene);
+        stage.show();
     }
 
 
@@ -74,7 +76,7 @@ public class Main extends Application {
 
     private static void addBackground(Group root, int n) {
         Label label = new Label("");
-        label.setPrefWidth(n * (CELL_MARGIN + CELL_SIZE)+ CELL_MARGIN);
+        label.setPrefWidth(n * (CELL_MARGIN + CELL_SIZE) + CELL_MARGIN);
         label.setPrefHeight(n * (CELL_MARGIN + CELL_SIZE) + CELL_MARGIN);
         label.relocate(GAME_MARGIN, GAME_MARGIN + GAME_TOP_MARGIN);
         label.setStyle("-fx-background-color: #BBADA0; -fx-background-radius: 10px");
@@ -82,8 +84,8 @@ public class Main extends Application {
     }
 
     private static void addLabels(Group root, int n) {
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 labels[i][j] = new Label("");
                 labels[i][j].getStyleClass().add("cell");
                 labels[i][j].getStyleClass().add("cell-0");
@@ -101,19 +103,18 @@ public class Main extends Application {
 
         bestScoreBoard = new Button("0");
         bestScoreBoard.getStyleClass().add("score-board");
-        bestScoreBoard.relocate(GAME_MARGIN * 2 + 150, GAME_MARGIN * 2);
+        bestScoreBoard.relocate(GAME_MARGIN * 2 + 120, GAME_MARGIN * 2);
         root.getChildren().add(bestScoreBoard);
 
         Label scoreLabel = new Label("SCORE");
-        scoreLabel.relocate(45 + GAME_MARGIN, 27);
+        scoreLabel.relocate(30 + GAME_MARGIN, 27);
         scoreLabel.getStyleClass().add("score-label");
         root.getChildren().add(scoreLabel);
 
         Label bestScoreLabel = new Label("BEST");
-        bestScoreLabel.relocate(200 + GAME_MARGIN * 2, 27);
+        bestScoreLabel.relocate(156 + GAME_MARGIN * 2, 27);
         bestScoreLabel.getStyleClass().add("score-label");
         root.getChildren().add(bestScoreLabel);
-
     }
 
     public static void startGame(int n) {

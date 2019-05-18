@@ -33,7 +33,7 @@ Button:hover {
     -fx-background-color: #998B80;
 }
 
-Button:pressed{
+Button:pressed {
     -fx-background-color: #776960;
 }
 
@@ -90,22 +90,22 @@ Label.success {
     -fx-font-size: 44;
 }
 
-.cell-16{
+.cell-16 {
     -fx-background-color: #F59563;
     -fx-font-size: 40;
 }
 
-.cell-32{
+.cell-32 {
     -fx-background-color: #F67C5F;
     -fx-font-size: 40;
 }
 
-.cell-64{
+.cell-64 {
     -fx-background-color: #F65E3B;
     -fx-font-size: 40;
 }
 
-.cell-128{
+.cell-128 {
     -fx-background-color: #EDCF72;
     -fx-font-size: 36;
 }
@@ -139,7 +139,7 @@ Label.success {
     -fx-font-size: 35;
     -fx-text-fill: #FAF8EF;
     -fx-background-color: #BBADA0;
-    -fx-pref-width: 150px;
+    -fx-pref-width: 120px;
     -fx-padding: 27 5 3 5;
     -fx-text-alignment: center;
 }

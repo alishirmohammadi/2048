@@ -42,7 +42,8 @@ public class Game {
                         map[i + deltaX][j + deltaY] = map[i][j];
                         map[i][j] = 0;
                     }
-                } catch (ArrayIndexOutOfBoundsException ignored) {}
+                } catch (ArrayIndexOutOfBoundsException ignored) {
+                }
             }
         }
     }

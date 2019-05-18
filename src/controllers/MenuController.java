@@ -3,6 +3,8 @@ package controllers;
 import javafx.event.ActionEvent;
 import views.Main;
 
+import java.io.IOException;
+
 public class MenuController {
     
     public void handle2x2ButtonAction(ActionEvent actionEvent) {
@@ -31,5 +33,14 @@ public class MenuController {
 
     public void handle8x8ButtonAction(ActionEvent actionEvent) {
         Main.startGame(8);
+    }
+
+    public void handleLogoutButtonAction(ActionEvent actionEvent) {
+        Main.setLoggedInUser(null);
+        try {
+            Main.showLoginMenu();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -26,6 +26,15 @@ public class GameController {
             }
     }
 
+    public static String getScoreString(int n) {
+        if(n > 1000) {
+            if(n < 10000)
+                return String.format("%d.%dK", n / 1000, n / 100 % 10);
+            return String.format("%dK", n / 1000);
+        }
+        return "" + n;
+    }
+
     public static EventHandler<KeyEvent> keyEventEventHandler = new EventHandler<KeyEvent>() {
         @Override
         public void handle(KeyEvent event) {
@@ -39,11 +48,11 @@ public class GameController {
                 game.move(Direction.UP);
             else
                 return;
-            if(game.getScore() > Main.getLoggedInUser().getBestScore(game.getN())) {
+            if (game.getScore() > Main.getLoggedInUser().getBestScore(game.getN())) {
                 Main.getLoggedInUser().setBestScore(game.getN(), game.getScore());
             }
-            Main.scoreButton.setText(String.format("%d", game.getScore()));
-            Main.bestScoreBoard.setText(String.format("%d", Main.getLoggedInUser().getBestScore(game.getN())));
+            Main.scoreButton.setText(getScoreString(game.getScore()));
+            Main.bestScoreBoard.setText(getScoreString(Main.getLoggedInUser().getBestScore(game.getN())));
             game.insert();
             showLabels();
         }

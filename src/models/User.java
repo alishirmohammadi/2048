@@ -10,7 +10,7 @@ public class User {
     private int highScore;
 
     public User(String username, String password) throws UserExistsException {
-        if(users.containsKey(username))
+        if (users.containsKey(username))
             throw new UserExistsException(username);
         users.put(username, this);
         this.highScore = 0;
@@ -20,9 +20,9 @@ public class User {
 
     public static User authenticateUser(String username, String password) throws UserNotFoundException, WrongPasswordException {
         User user = users.get(username);
-        if(user == null)
+        if (user == null)
             throw new UserNotFoundException(username);
-        if(user.password.equals(password))
+        if (user.password.equals(password))
             return user;
         throw new WrongPasswordException();
     }
@@ -32,7 +32,7 @@ public class User {
     }
 
     public void setBestScore(int n, int score) {
-        if(!bestScores.containsKey(n))
+        if (!bestScores.containsKey(n))
             bestScores.put(n, score);
         else
             bestScores.replace(n, score);
@@ -40,7 +40,7 @@ public class User {
 
     @Override
     public boolean equals(Object object) {
-        if(object == this)
+        if (object == this)
             return true;
         return object instanceof User && ((User) object).getUsername().equals(username);
     }
