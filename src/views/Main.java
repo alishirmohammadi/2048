@@ -116,7 +116,7 @@ public class Main extends Application {
         scoreButton.relocate(GAME_MARGIN, GAME_MARGIN * 2);
         root.getChildren().add(scoreButton);
 
-        bestScoreBoard = new Button("0");
+        bestScoreBoard = new Button(GameController.getScoreString(loggedInUser.getBestScore(game.getN())));
         bestScoreBoard.getStyleClass().add("score-board");
         bestScoreBoard.relocate(GAME_MARGIN * 2 + 120, GAME_MARGIN * 2);
         root.getChildren().add(bestScoreBoard);

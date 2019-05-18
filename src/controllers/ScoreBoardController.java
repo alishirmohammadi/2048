@@ -22,12 +22,9 @@ public class ScoreBoardController {
     @FXML public Label label6_1_score, label6_2_score, label6_3_score;
     @FXML public Label label7_1_score, label7_2_score, label7_3_score;
     @FXML public Label label8_1_score, label8_2_score, label8_3_score;
-
     public static ScoreBoardController instance;
 
-    {
-        instance = this;
-    }
+    { instance = this; }
     
     public void showLabels(ArrayList<User> users) {
         showScores(users, 3, new Label[] {label3_1, label3_1_score, label3_2, label3_2_score, label3_3, label3_3_score});
